@@ -4,7 +4,7 @@ class UsersController < ApplicationController
        users = User.all
        render json: users
      end
-   ###get user bty id
+   ###get user by id
    def show
      user = User.includes(:reviews).find_by(id: params[:id])
      render json: user, include: :reviews

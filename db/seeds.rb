@@ -14,6 +14,7 @@ user1 = User.create(
    
    food1 = Food.create(
      name: "Pilau",
+     description:"Spicy Pilau with rice and Beef",
      image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.hJMKTkT0kPBEhNF-4QPEnAHaE8%26pid%3DApi%26h%3D160&f=1&ipt=321ea228f52d07301dbf6802c368f1be68739a3e2cec439925ededcfcb8cadc7&ipo=images",
      price: 2500,
      restaurant_name: "Waterloo"
@@ -21,8 +22,9 @@ user1 = User.create(
 
    food2 = Food.create(
      name: "Steamed rice",
+     description:"Spicy Pilau with rice and Beef",
      image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.hJMKTkT0kPBEhNF-4QPEnAHaE8%26pid%3DApi%26h%3D160&f=1&ipt=321ea228f52d07301dbf6802c368f1be68739a3e2cec439925ededcfcb8cadc7&ipo=images",
-     price: 2500,
+     price: 2300,
      restaurant_name: "Ontario"
    )
    

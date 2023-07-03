@@ -6,14 +6,12 @@ import Signup from "./pages/Signup"
 import Login from "./pages/Login"
 import Profile from "./pages/Profile"
 import AddToCart from "./pages/AddToCart"
-import AddRestaurant from "./pages/AddRestaurant"
 import AddFood from "./pages/AddFood"
 import { AuthProvider } from "./context/AuthContext"
 import { FoodProvider } from "./context/FoodContext"
 
 
 function App() {  
-
   return (
     <BrowserRouter>
     <AuthProvider>
@@ -26,7 +24,6 @@ function App() {
           <Route path="/login" element={<Login/>}/>
           <Route path="/profile" element={<Profile/>}/>
           <Route path="/checkout" element={<AddToCart/>}/>
-          <Route path="/addrestaurant" element={<AddRestaurant/>}/>
           <Route path="/addfood" element={<AddFood/>}/>
          </Route>
       </Routes>

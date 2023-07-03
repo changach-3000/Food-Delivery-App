@@ -46,7 +46,7 @@ end
      private
    
      def food_params 
-       params.permit(:name, :image, :price, :restaurant_name)
+       params.permit(:name, :description,:image, :price, :restaurant_name)
      end
    end
    

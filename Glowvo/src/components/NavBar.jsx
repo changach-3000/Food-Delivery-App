@@ -18,9 +18,6 @@ function NavBar() {
           <Link class="nav-link" to="/checkout">Checkout</Link>
         </li>
         <li class="nav-item">
-          <Link class="nav-link" to="/addrestaurant">Add Restaurant</Link>
-        </li>
-        <li class="nav-item">
           <Link class="nav-link" to="/addfood">Add Food</Link>
         </li>
         <li class="nav-item dropdown">
