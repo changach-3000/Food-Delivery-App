@@ -1,4 +1,19 @@
 class UsersController < ApplicationController
+     skip_before_action :authorize, only: [:create ]
+###get current logged  in user
+### Get current logged-in user
+def current_user
+     user = User.find_by(id: session[:user_id])
+   
+     if user
+       render json: user.slice(:id, :username, :email, :profile_picture, :is_admin)
+     else
+       render json: { error: "Not logged in" }, status: :not_found
+     end
+end
+   
+
+
      ##get all users
      def index
        users = User.all
