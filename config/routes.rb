@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  resources :restaurant_foods
   resources :reviews
-  resources :foods
-  resources :restaurants
-  resources :users
+  resources :foods, only: [:index, :create, :destroy]
+  get '/foods/:id', to: 'foods#single_food', as: 'single_food'
+  resources :users, only: [:index, :show, :create]
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

@@ -1,4 +1,4 @@
 class Review < ApplicationRecord
-  belongs_to :restaurant
+  belongs_to :food
   belongs_to :user
 end

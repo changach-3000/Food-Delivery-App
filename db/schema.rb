@@ -10,37 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_03_122714) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_03_122628) do
   create_table "foods", force: :cascade do |t|
     t.string "name"
     t.string "image"
     t.float "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "restaurant_foods", force: :cascade do |t|
-    t.integer "restaurant_id", null: false
-    t.integer "food_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["food_id"], name: "index_restaurant_foods_on_food_id"
-    t.index ["restaurant_id"], name: "index_restaurant_foods_on_restaurant_id"
-  end
-
-  create_table "restaurants", force: :cascade do |t|
-    t.string "name"
+    t.string "restaurant_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "reviews", force: :cascade do |t|
     t.text "comment"
-    t.integer "restaurant_id", null: false
     t.integer "user_id", null: false
+    t.integer "food_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["restaurant_id"], name: "index_reviews_on_restaurant_id"
+    t.index ["food_id"], name: "index_reviews_on_food_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
@@ -54,8 +40,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_03_122714) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "restaurant_foods", "foods"
-  add_foreign_key "restaurant_foods", "restaurants"
-  add_foreign_key "reviews", "restaurants"
+  add_foreign_key "reviews", "foods"
   add_foreign_key "reviews", "users"
 end
