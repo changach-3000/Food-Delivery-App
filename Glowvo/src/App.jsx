@@ -8,11 +8,16 @@ import Profile from "./pages/Profile"
 import AddToCart from "./pages/AddToCart"
 import AddRestaurant from "./pages/AddRestaurant"
 import AddFood from "./pages/AddFood"
+import { AuthProvider } from "./context/AuthContext"
+import { FoodProvider } from "./context/FoodContext"
+
 
 function App() {  
 
   return (
     <BrowserRouter>
+    <AuthProvider>
+      <FoodProvider>
       <Routes>
          <Route path="/" element={<RootLayout/>}>
           <Route index element={<LandingPage/>}/>
@@ -25,6 +30,8 @@ function App() {
           <Route path="/addfood" element={<AddFood/>}/>
          </Route>
       </Routes>
+      </FoodProvider>
+      </AuthProvider>
     </BrowserRouter>
   )
 }

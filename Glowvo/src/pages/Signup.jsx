@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 
 function Signup() {
   return (
-    <div className='login template d-flex justify-content-center align-items-center vh-100'>
-    <div className='60-w p-5 rounded bg-white mx-3 mx-sm-1'>
+    <div className='login template vh-100'>
+    <div className ='p-5 rounded bg-white mx-3 mx-sm-1' style={{ width: '40%' }}>
       <form>
         <h3 className='text-center'>Sign Up</h3>
         <div className='mb-3'>
@@ -33,7 +33,7 @@ function Signup() {
         </div>
         <div className='d-flex justify-content-between mt-2'>
           <p className='text-end'>Already Registered?</p>
-          <Link to='signup' style={{ color: '#00a082ff' }} className='ms-2'>Sign in</Link>
+          <Link to='/login' style={{ color: '#00a082ff' }} className='ms-2'>Sign in</Link>
         </div>
       </form>
     </div>
