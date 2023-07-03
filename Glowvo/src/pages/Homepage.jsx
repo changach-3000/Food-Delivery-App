@@ -21,10 +21,11 @@ const groupedProducts = {};
           {groupedProducts[restaurant_name].map((food) => (
             <div key={food.id} className='card'>
               <div><img src={food.image} width={300} height={250}/></div>
-              <div>{food.name}</div>
-              <div>{food.description}</div>
-              <div>{food.price}</div>
-             
+              <div className='details'style={{ color: '#00a082ff',fontFamily:'cursive' ,backgroundColor:'#FFC244FF'}} >
+              <div className='title' style={{ textAlign:'center',fontSize:'15pt'}}>{food.name}</div>
+              <div className='description mx-3'>{food.description}</div>
+              <div className='price mx-3'>{food.price}</div>
+             </div>
             </div>
           ))}
         </div>
