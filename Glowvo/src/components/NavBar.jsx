@@ -25,7 +25,6 @@ function NavBar() {
         </li>
         <li class="nav-item dropdown">
           <Link class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <img className='me-1' width="24" height="24" src="https://img.icons8.com/office/16/user-female-circle.png" alt="user-female-circle"/>
             Profile
           </Link>
           <ul class="dropdown-menu">
