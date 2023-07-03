@@ -1,69 +1,164 @@
-/* :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* navbar styling */
+.navbar{
+  background-color: #f5c919;
+}
+.logo{
+color: #005A25;
+font-weight: bolder;
+font-size: 20pt;
+font-family: cursive;
+}
+.login{
+  background-color: #f5c919;
+}
+/* landingpage styling start */
+/* beginning of hero section styling */
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+.hero-section{
+  background-color: #f5c919;
+  position: relative;
+  height: 100vh;
+}
+.lead{
+  font-size: 40pt;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+#title1{
+  font-weight: lighter;
+  font-size: 13pt;
+  color:#004D20;
 }
-a:hover {
-  color: #535bf2;
+#home-text{
+  font-size: 10pt;
+  font-weight: lighter;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+/* end of hero section styling */
+/* add a wavy line */
+       
+/* landing styling end */
+/* footer styling */
+#footer{
+  background: #005A25;
+  padding: 0 0 30px 0;
+  color: #fff;
+  font-size: 14px;
+  font-weight: lighter;
+}
+#footer .footer-top{
+      background: #005A25;
+      padding: 60px 0 30px 0
+}
+#footer .footer-top .footer-info{
+      margin-bottom: 30px
+}
+#footer .footer-top .footer-info h3{
+      font-size: 18px;
+      font-weight: lighter;
+      margin: 0 0 20px 0;
+      padding: 2px 0 2px 0;
+      line-height: 1;
+      font-weight: 700
+}
+#footer .footer-top .footer-info p{
+      font-size: 14px;
+      font-weight: lighter;
+      line-height: 24px;
+      margin-bottom: 0;
+      font-family: "Raleway", sans-serif;
+      color: #fff
+}
+#footer .footer-top .social-links a{
+      font-size: 18px;
+      font-weight: lighter;
+      display: inline-block;
+      background: #545454;
+      color: #fff;
+      line-height: 1;
+      padding: 8px 0;
+      margin-right: 4px;
+      border-radius: 50%;
+      text-align: center;
+      width: 36px;
+      height: 36px;
+      transition: 0.3s
+  }
+  #footer .footer-top .social-links a:hover{
+      background: #168546;
+      color: #fff;
+      font-weight: lighter;
+      text-decoration: none
+  }
+  #footer .footer-top h4{
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      text-transform: uppercase;
+      position: relative;
+      padding-bottom: 12px
+  }
+  #footer .footer-top .footer-links{
+      margin-bottom: 30px
+  }
+  #footer .footer-top .footer-links ul{
+      list-style: none;padding: 0;margin: 0
+  }
+  #footer .footer-top .footer-links ul i{
+      padding-right: 2px;
+      color: #005A25;
+      font-size: 18px;
+      line-height: 1
+  }
+  #footer .footer-top .footer-links ul li{
+      padding: 10px 0;
+      display: flex;
+      align-items: center
+  }
+  #footer .footer-top .footer-links ul li:first-child{
+      padding-top: 0;
+  }
+  #footer .footer-top .footer-links ul a{
+      color: #fff;
+      transition: 0.3s;
+      display: inline-block;
+      line-height: 1;
+  }
+  #footer .footer-top .footer-links ul a:hover{
+      color: #005A25;
+  }
+  #footer .footer-top .footer-contact{
+      margin-bottom: 30px;
+  }
+  #footer .footer-top .footer-contact p{
+      line-height: 26px;
+  }
+  #footer .copyright{
+      text-align: center;
+      padding-top: 30px;
+  }
+  #footer .credits{
+      padding-top: 10px;
+      text-align: center;
+      font-size: 13px;
+      color: #fff
+  }
+/* homepage styling */
+
+/* end of homepage styling */
+/* Styling of profile */
+.profile-head {
+  transform: translateY(5rem)
+}
+
+.cover {
+  background-image: url(https://images.unsplash.com/photo-1530305408560-82d13781b33a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80);
+  background-size: cover;
+  background-repeat: no-repeat
+}
+
+.profile-page{
+  background:#f5c919;
   min-height: 100vh;
+  overflow-x:hidden;
 }
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */
+/* End of profile styling */
