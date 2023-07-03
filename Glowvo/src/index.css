@@ -1,21 +1,24 @@
 /* navbar styling */
 .navbar{
-  background-color: #f5c919;
+  background-color: #FFC244FF;
 }
 .logo{
-color: #005A25;
+color: #00a082ff;
 font-weight: bolder;
 font-size: 20pt;
 font-family: cursive;
 }
 .login{
-  background-color: #f5c919;
+  background-color: #FFC244FF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 /* landingpage styling start */
 /* beginning of hero section styling */
 
 .hero-section{
-  background-color: #f5c919;
+  background-color: #FFC244FF;
   position: relative;
   height: 100vh;
 }
@@ -39,14 +42,14 @@ font-family: cursive;
 /* landing styling end */
 /* footer styling */
 #footer{
-  background: #005A25;
+  background: #00a082ff;
   padding: 0 0 30px 0;
   color: #fff;
   font-size: 14px;
   font-weight: lighter;
 }
 #footer .footer-top{
-      background: #005A25;
+      background: #00a082ff;
       padding: 60px 0 30px 0
 }
 #footer .footer-top .footer-info{
@@ -84,7 +87,7 @@ font-family: cursive;
       transition: 0.3s
   }
   #footer .footer-top .social-links a:hover{
-      background: #168546;
+      background: #00a082ff;
       color: #fff;
       font-weight: lighter;
       text-decoration: none
@@ -105,7 +108,7 @@ font-family: cursive;
   }
   #footer .footer-top .footer-links ul i{
       padding-right: 2px;
-      color: #005A25;
+      color: #00a082ff;
       font-size: 18px;
       line-height: 1
   }
@@ -151,13 +154,11 @@ font-family: cursive;
 }
 
 .cover {
-  background-image: url(https://images.unsplash.com/photo-1530305408560-82d13781b33a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80);
-  background-size: cover;
-  background-repeat: no-repeat
+  background-color: #00a082ff;
 }
 
 .profile-page{
-  background:#f5c919;
+  background:#FFC244FF;
   min-height: 100vh;
   overflow-x:hidden;
 }
