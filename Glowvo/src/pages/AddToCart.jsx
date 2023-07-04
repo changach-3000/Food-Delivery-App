@@ -1,9 +1,43 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { FoodContext } from '../context/FoodContext'
 
 function AddToCart() {
+  const { selectedFoods,removefromcheckout } = useContext(FoodContext);
+
+  if (selectedFoods.length === 0) {
+    return <div>No foods selected</div>;
+  }
+
   return (
-    <div>AddToCart</div>
-  )
+    <div className= 'container my-5' style={{backgroundColor:'#FFC244FF', margin:'3%'}}>
+        <h2 className='text-center'>Selected Foods</h2>
+      <div className=" row ">
+      {selectedFoods && selectedFoods.map((food) => (
+
+         <div key={food.id} className="col-4 mb-3  mr-3 px-3">
+         <div className='border bg-light overflow-hidden rounded'> 
+           <img src={food.image} height={250} alt='loading...'/>
+           <h5 style={{textAlign:'center',fontWeight:'lighter'}}>{food.name}</h5>
+           {/* style the bot details */}
+           <div id="movie-details">
+           <p style={{fontWeight:'lighter' ,fontSize:'13px'}}> {food.description}</p>
+         <img className='mx-3' src="https://img.icons8.com/ios/20/null/minus.png" onClick={()=>removefromcheckout(food)}/>
+         <button className='btn btn-outline-success'>Proceed To Checkout</button>
+         
+       </div>
+       </div> 
+       </div>
+       
+      ))
+      }
+    </div>
+    </div>
+  );
 }
+    
+    
+
+  
+
 
 export default AddToCart

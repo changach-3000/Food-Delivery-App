@@ -7,6 +7,7 @@ class FoodsController < ApplicationController
         {
           id: food.id,
           name: food.name,
+          description: food.description,
           image: food.image,
           price: food.price,
           restaurant_name: food.restaurant_name,
@@ -78,7 +79,7 @@ end
      private
    
      def food_params
-      params.permit(:name, :image, :price, :restaurant_name)
+      params.permit(:name, :description, :image, :price, :restaurant_name)
     end
    end
    

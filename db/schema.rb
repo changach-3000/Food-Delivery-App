@@ -13,6 +13,7 @@
 ActiveRecord::Schema[7.0].define(version: 2023_07_04_100003) do
   create_table "foods", force: :cascade do |t|
     t.string "name"
+    t.string "description"
     t.string "image"
     t.float "price"
     t.string "restaurant_name"
@@ -36,7 +37,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_04_100003) do
     t.string "email"
     t.string "profile_picture"
     t.string "password_digest"
-    t.boolean "is_admin", default: false
+    t.boolean "is_admin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

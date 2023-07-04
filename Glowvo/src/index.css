@@ -37,7 +37,7 @@ font-family: cursive;
 }
 
 /* end of hero section styling */
-/* add a wavy line */
+
        
 /* landing styling end */
 /* footer styling */
@@ -163,3 +163,23 @@ font-family: cursive;
   overflow-x:hidden;
 }
 /* End of profile styling */
+
+/* card styling for homepage */
+
+.card-container {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  white-space: pre-wrap;
+  width: 100%;
+}
+
+.card {
+  flex-shrink: 0;
+  margin-right: 10px;
+  border-radius: 10px;
+  margin-bottom: 1%;
+  overflow-y: hidden;
+}
+

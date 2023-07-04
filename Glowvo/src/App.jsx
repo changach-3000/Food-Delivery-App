@@ -6,18 +6,19 @@ import Signup from "./pages/Signup"
 import Login from "./pages/Login"
 import Profile from "./pages/Profile"
 import AddToCart from "./pages/AddToCart"
-import AddRestaurant from "./pages/AddRestaurant"
 import AddFood from "./pages/AddFood"
 import { AuthProvider } from "./context/AuthContext"
 import { FoodProvider } from "./context/FoodContext"
+import { ReviewProvider } from "./context/ReviewContext"
+import AddReview from "./pages/AddReview"
 
 
 function App() {  
-
   return (
     <BrowserRouter>
     <AuthProvider>
       <FoodProvider>
+        <ReviewProvider>
       <Routes>
          <Route path="/" element={<RootLayout/>}>
           <Route index element={<LandingPage/>}/>
@@ -26,10 +27,11 @@ function App() {
           <Route path="/login" element={<Login/>}/>
           <Route path="/profile" element={<Profile/>}/>
           <Route path="/checkout" element={<AddToCart/>}/>
-          <Route path="/addrestaurant" element={<AddRestaurant/>}/>
           <Route path="/addfood" element={<AddFood/>}/>
+          <Route path="/addReview" element={<AddReview/>}/>
          </Route>
       </Routes>
+      </ReviewProvider>
       </FoodProvider>
       </AuthProvider>
     </BrowserRouter>

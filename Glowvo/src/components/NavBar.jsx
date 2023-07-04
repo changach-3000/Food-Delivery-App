@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { AuthContext } from '../context/AuthContext'
 
 function NavBar() {
+  const {logout,currentuser} = useContext(AuthContext)
+
   return (
   <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
@@ -11,27 +14,37 @@ function NavBar() {
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
+       
+        {
+          currentuser && currentuser.id?(
+          <>
+           <li class="nav-item">
           <Link class="nav-link active" aria-current="page" to="/home">Home</Link>
         </li>
         <li class="nav-item">
           <Link class="nav-link" to="/checkout">Checkout</Link>
         </li>
-        <li class="nav-item">
-          <Link class="nav-link" to="/addrestaurant">Add Restaurant</Link>
-        </li>
-        <li class="nav-item">
+        {
+          currentuser && currentuser.is_admin?
+          <>
+           <li class="nav-item">
           <Link class="nav-link" to="/addfood">Add Food</Link>
         </li>
+          </>:" "
+        }
         <li class="nav-item dropdown">
           <Link class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Profile
           </Link>
           <ul class="dropdown-menu">
             <li><Link class="dropdown-item" to="/profile">My Profile</Link></li>
-            <li><a class="dropdown-item" href="#">Logout</a></li>
+            <li><a class="dropdown-item" onClick={()=>logout()}>Logout</a></li>
           </ul>
         </li>
+          </>)
+          : ""
+        }
+      
       </ul>
     </div>
   </div>
