@@ -1,17 +1,19 @@
 class ReviewsController < ApplicationController
      skip_before_action :authorize, only: [:index]
         ##get sll reviews
-     def index
-          reviews = Review.all.includes(:user)
+        def index
+          reviews = Review.includes(:user, :food).all
           reviews_data = reviews.map do |review|
             {
               id: review.id,
               comment: review.comment,
-              username: review.user.username
+              username: review.user.username,
+              food_id: review.food.restaurant_name
             }
           end
           render json: reviews_data
         end
+        
         
    
      ### create new review

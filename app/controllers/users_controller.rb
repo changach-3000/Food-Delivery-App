@@ -16,9 +16,19 @@ def current_user
 
      ##get all users
      def index
-       users = User.all
-       render json: users
-     end
+          users = User.all
+          users_data = users.map do |user|
+            {
+              id: user.id,
+              name: user.username,
+              email: user.email,
+              profile_picture: user.profile_picture,
+              is_admin: user.is_admin
+            }
+          end
+          render json: users_data
+        end
+        
    ###get user bty id
    def show
      user = User.includes(:reviews).find_by(id: params[:id])
