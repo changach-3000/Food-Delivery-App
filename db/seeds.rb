@@ -27,12 +27,4 @@ user1 = User.create(
      price: 2300,
      restaurant_name: "Ontario"
    )
-   
 
-   
-   review1 = Review.create(
-     comment: "It's so good",
-     user: user1,
-     food: food1
-   )
-   
