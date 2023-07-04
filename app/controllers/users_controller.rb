@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
      skip_before_action :authorize, only: [:create ]
 ###get current logged  in user
-### Get current logged-in user
+
 def current_user
      user = User.find_by(id: session[:user_id])
    
@@ -10,7 +10,7 @@ def current_user
      else
        render json: { error: "Not logged in" }, status: :not_found
      end
-end
+   end
    
 
 
@@ -28,14 +28,19 @@ end
 
    ###create new user
    def create
-     user = User.create(user_params)
-   
-     if user.valid?
-       render json: { success: "User created successfully" }
+     if @current_user
+       render json: { error: "You are already logged in" }, status: :unprocessable_entity
      else
-       render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
+       user = User.create(user_params)
+     
+       if user.valid?
+         render json: { success: "User created successfully" }
+       else
+         render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
+       end
      end
    end
+   
    
    private
    

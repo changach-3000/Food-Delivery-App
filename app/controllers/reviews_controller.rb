@@ -1,11 +1,18 @@
 class ReviewsController < ApplicationController
      skip_before_action :authorize, only: [:index]
-        
-     ### get all reviews
+        ##get sll reviews
      def index
-       reviews = Review.all
-       render json: reviews
-     end
+          reviews = Review.all.includes(:user)
+          reviews_data = reviews.map do |review|
+            {
+              id: review.id,
+              comment: review.comment,
+              username: review.user.username
+            }
+          end
+          render json: reviews_data
+        end
+        
    
      ### create new review
      def create
@@ -23,21 +30,23 @@ class ReviewsController < ApplicationController
      end
    
      ### update existing review by id
-     def update
-       review = Review.find_by(id: params[:id])
+ ### update existing review by id
+def update
+     review = Review.find_by(id: params[:id])
    
-       if review.nil?
-         render json: { error: "Review not found" }, status: :not_found
+     if review.nil?
+       render json: { error: "Review not found" }, status: :not_found
+     elsif review.user_id != @current_user.id
+       render json: { error: "You are not authorized to update this review" }, status: :unauthorized
+     else
+       if review.update(comment: params[:comment])
+         render json: { success: "Updated successfully" }
        else
-         user = User.find_by(id: params[:user_id])
-   
-         if @current_user.reviews.update(comment: params[:comment])
-           render json: { success: "Updated successfully" }
-         else
-           render json: { error: review.errors.full_messages.join(", ") }, status: :unprocessable_entity
-         end
+         render json: { error: review.errors.full_messages.join(", ") }, status: :unprocessable_entity
        end
      end
+   end
+   
    
      ### delete an existing review by the id
      def destroy
