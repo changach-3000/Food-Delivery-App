@@ -1,8 +1,10 @@
 import { createContext, useEffect, useState} from "react"
+import { useNavigate } from "react-router"
 import  Swal from "sweetalert2"
 export const FoodContext= createContext()
 
 export function FoodProvider({children}){
+  const nav = useNavigate()
   const [foods , setFoods] = useState('')
   const [selectedFoods, setSelectedFoods] = useState([]);
   const [checkout, setCheckout] = useState()
