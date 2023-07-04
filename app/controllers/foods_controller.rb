@@ -1,29 +1,9 @@
 class FoodsController < ApplicationController
-  skip_before_action :authorize, only: [:index]
      ###get all foods
-     def index
-      foods = Food.includes(reviews: :user).all
-      foods_data = foods.map do |food|
-        {
-          id: food.id,
-          name: food.name,
-          image: food.image,
-          price: food.price,
-          restaurant_name: food.restaurant_name,
-          
-          reviews: food.reviews.map do |review|
-            {
-              id: review.id,
-              comment: review.comment,
-              username: review.user.username
-            }
-          end
-        }
-      end
-      render json: foods_data
-    end
-    
-    
+     def index 
+       foods = Food.all 
+       render json: foods
+     end
 
 
 ### Get food by id
@@ -36,8 +16,7 @@ def single_food
        render json: foods, include: :reviews
      end
 end
-   
-   
+  
      ###add food 
      def create
       if !@current_user || !@current_user.is_admin?

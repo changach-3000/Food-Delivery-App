@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { AuthContext } from '../context/AuthContext'
 
 function NavBar() {
+  const {logout} = useContext(AuthContext)
   return (
   <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
@@ -26,7 +28,7 @@ function NavBar() {
           </Link>
           <ul class="dropdown-menu">
             <li><Link class="dropdown-item" to="/profile">My Profile</Link></li>
-            <li><a class="dropdown-item" href="#">Logout</a></li>
+            <li><a class="dropdown-item" onClick={()=>logout()}>Logout</a></li>
           </ul>
         </li>
       </ul>

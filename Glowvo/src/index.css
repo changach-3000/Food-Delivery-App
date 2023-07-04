@@ -165,21 +165,21 @@ font-family: cursive;
 /* End of profile styling */
 
 /* card styling for homepage */
-::-webkit-scrollbar {
- width: 2px;
-}
 
 .card-container {
   display: flex;
-  overflow-x: scroll;
-  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
   white-space: nowrap;
+  white-space: pre-wrap;
+  width: 100%;
 }
+
 .card {
-  flex-shrink: 0; 
+  flex-shrink: 0;
   margin-right: 10px;
   border-radius: 10px;
   margin-bottom: 1%;
   overflow-y: hidden;
-
 }
+
