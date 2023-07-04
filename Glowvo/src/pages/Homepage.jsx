@@ -1,9 +1,11 @@
 import React, { useContext } from 'react'
 import { FoodContext } from '../context/FoodContext'
+import { AuthContext } from '../context/AuthContext';
 
 
 function Homepage() {
-const {foods,Addtocheckout} = useContext(FoodContext)
+const {foods,Addtocheckout,deleteFood} = useContext(FoodContext)
+const {currentuser} = useContext(AuthContext)
 
 const groupedProducts = {};
   foods && foods.map((food) => {
@@ -26,9 +28,15 @@ const groupedProducts = {};
               <div className='title' style={{ textAlign:'center',fontSize:'15pt'}}>{food.name}</div>
               <div className='description mx-3'>{food.description}</div>
               <div className='price mx-3'>{food.price}</div>
+              {
+                currentuser && currentuser.is_admin?
+                <>
+                 <button className='btn btn-outline-danger btn-sm' onClick={()=>{deleteFood(food.id)}}>Delete</button>
+                </>:""
+              }
              </div>
           ))}
-        </div>
+        </div> 
       </div>
     ))}
   </div>

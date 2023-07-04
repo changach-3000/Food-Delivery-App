@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get "/api/current_user", to:"users#current_user"
 
 scope "api" do
-  resources :reviews
+  resources :reviews, only: [:index, :create, :update, :destroy]
   resources :foods, only: [:index, :create, :destroy]
   resources :users, only: [:index, :show, :create]
 
