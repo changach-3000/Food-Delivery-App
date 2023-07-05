@@ -12,8 +12,6 @@ scope "api" do
   end
   get '/api/foods/:id', to: 'foods#single_food', as: 'single_food'
 
-
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
- 
+  get "*parts",to: "react#index"
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html 
 end
