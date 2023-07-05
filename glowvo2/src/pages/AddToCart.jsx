@@ -23,7 +23,7 @@ function AddToCart() {
            <div id="movie-details">
            <p style={{fontWeight:'lighter' ,fontSize:'13px'}}> {food.description}</p>
          <img className='mx-3' src="https://img.icons8.com/ios/20/null/minus.png" onClick={()=>removefromcheckout(food)}/>
-        <Link to={`/food/${food.id}`}><button className='btn btn-outline-success'>Proceed To Checkout</button></Link>
+        <Link to={`/food/${food.id}`}><button className='btn btn-outline-success btn-sm mb-2 mx-auto'>Proceed To Checkout</button></Link>
          
        </div>
        </div> 
