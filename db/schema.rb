@@ -24,12 +24,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_04_100003) do
 
   create_table "reviews", force: :cascade do |t|
     t.text "comment"
-    t.integer "user_id", null: false
-    t.integer "food_id", null: false
+    t.integer "user_id"
+    t.integer "food_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["food_id"], name: "index_reviews_on_food_id"
-    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -37,11 +35,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_04_100003) do
     t.string "email"
     t.string "profile_picture"
     t.string "password_digest"
-    t.boolean "is_admin"
+    t.boolean "is_admin", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "reviews", "foods"
-  add_foreign_key "reviews", "users"
 end
