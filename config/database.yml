@@ -10,8 +10,9 @@ default: &default
   timeout: 5000
 
 development:
-  <<: *default
-  database: db/development.sqlite3
+  url: postgresql://glowvodb_user:WvDc8tArcm8EK7eJbhZWLEnz1wmuGIpC@dpg-ciimpklph6erq6k1rqc0-a.oregon-postgres.render.com/glowvodb
+  # <<: *default
+  # database: db/development.sqlite3
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
