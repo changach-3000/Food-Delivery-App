@@ -16,8 +16,8 @@ function MyOrders() {
         {selectedFoods && selectedFoods.map((food) => (
   
            <div key={food.id} className="col-4 mb-3  mr-3 px-3">
-           <div className='border bg-light overflow-hidden rounded'> 
-             <img src={food.image} style={{ maxWidth: '100%' }} height={250} alt='loading...'/>
+           <div className='border bg-light overflow-hidden rounded' style={{ textAlign: 'center' }}> 
+             <img className='mt-2' src={food.image} height={250} alt='loading...'/>
              <h5 style={{textAlign:'center',fontWeight:'lighter'}}>{food.name}</h5>
              {/* style the bot details */}
              <div id="movie-details">
