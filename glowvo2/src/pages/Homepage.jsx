@@ -17,24 +17,27 @@ const groupedProducts = {};
   });
   return (
     
-    <div className='container mt-5' style={{ backgroundColor:'#FFC244FF'}}>
+    <div className='container mt-5 mb-5' style={{ backgroundColor:'#FFC244FF'}}>
     {Object.keys(groupedProducts).map((restaurant_name) => (
       <div key={restaurant_name} className='category-container'>
         <h3 className='category-title py-3' style={{ color: '#00a082ff',fontFamily:'cursive' }}>{restaurant_name}</h3>
         <div className='card-container '>
           {groupedProducts[restaurant_name].map((food) => (
             <div key={food.id} className='card col-4 mb-3  mr-3 px-3 shadow g-2'>
-              <div><img src={food.image} width={350} height={250} /></div>
+              <div><img src={food.image} style={{ maxWidth: '100%' }} height={250} /></div>
               <div className='title' style={{ textAlign:'center',fontSize:'15pt'}}>{food.name}</div>
               <div className='description mx-3'>{food.description}</div>
               <div className='price mx-3'>{food.price}</div>
-              <button className='btn btn-outline-success' onClick={()=>Addtocheckout(food)}>Add to checkout</button>
+              <div className='d-flex flex-column align-items-start'>
+              <button className='btn btn-outline-success btn-sm mb-2 d-block mx-auto' onClick={()=>Addtocheckout(food)}>Add to checkout</button>
+              </div>
               {
                 currentuser && currentuser.is_admin?
                 <>
-                 <button className='btn btn-outline-danger btn-sm' onClick={()=>{deleteFood(food.id)}}>Delete</button>
+                 <button className='btn btn-outline-danger btn-sm mb-2 d-block mx-auto' onClick={()=>{deleteFood(food.id)}}>Delete</button>
                 </>:""
               }
+              
              </div>
           ))}
         </div> 

@@ -38,6 +38,7 @@ function SingleFood() {
       .then((res) => res.json())
       .then((food) => {
         setFood(food)
+        setPrice(food.price)
       })
   }, [])
 
@@ -78,7 +79,7 @@ function SingleFood() {
                 <button className="btn btn-secondary me-2" onClick={handleDecrement}>-</button>
                 <button className="btn btn-secondary" onClick={handleIncrement}>+</button>
               </div>
-              <button className='btn btn-success mt-3' onClick={handleFinishOrder}>Place Order</button>
+              <button className='btn btn-success mt-3 mb-2' onClick={handleFinishOrder}>Place Order</button>
             </div>
           </div>
         </div>

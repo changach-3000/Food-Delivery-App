@@ -11,19 +11,19 @@ function MyOrders() {
   
     return (
       <div className= 'container my-5' style={{backgroundColor:'#FFC244FF', margin:'3%',height:'100vh'}}>
-          <h2 className='text-center'>My Orders</h2>
+          <h2 className='text-center '>My Orders</h2>
         <div className=" row ">
         {selectedFoods && selectedFoods.map((food) => (
   
            <div key={food.id} className="col-4 mb-3  mr-3 px-3">
            <div className='border bg-light overflow-hidden rounded'> 
-             <img src={food.image} height={250} alt='loading...'/>
+             <img src={food.image} style={{ maxWidth: '100%' }} height={250} alt='loading...'/>
              <h5 style={{textAlign:'center',fontWeight:'lighter'}}>{food.name}</h5>
              {/* style the bot details */}
              <div id="movie-details">
              <p style={{fontWeight:'lighter' ,fontSize:'13px'}}> {food.description}</p>
            <NavLink to="/addReview">
-              <button className="btn btn-warning">Add Review</button>
+              <button style={{backgroundColor: "#00a082ff",borderColor: "#00a082ff"}} className="btn btn-warning mb-2">Add Review</button>
             </NavLink> 
             
          </div>
