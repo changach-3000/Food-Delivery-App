@@ -1,0 +1,2 @@
+web: PORT=4000 npm start --prefix glowvo2
+api: PORT=3000 rails s

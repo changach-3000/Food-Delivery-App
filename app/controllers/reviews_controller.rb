@@ -13,34 +13,16 @@ class ReviewsController < ApplicationController
           render json: reviews_data
         end
         
-   
-     ### create new review
-    #  def create
-    #    @current_user
-    #    food = Food.find_by(id: params[:food_id])
-   
-    #    if @current_user.nil?
-    #      render json: { error: "Only existing users can comment" }, status: :not_found
-    #    elsif food.nil?
-    #      render json: { error: "No such food" }, status: :not_found
-    #    else
-    #      review = @current_user.reviews.create(comment: params[:comment], food: food)
-    #      render json: review
-    #    end
-    #  end
-    def create
-      @current_user
-      food = Food.find_by(id: params[:food_id])
-    
-      if @current_user.nil?
-        render json: { error: "Only existing users can comment" }, status: :not_found
-      elsif food.nil?
-        render json: { error: "No such food" }, status: :not_found
-      else
-        review = @current_user.reviews.create(comment: params[:comment], food: food)
-        render json: review
-      end
-    end
+        def create
+          @current_user
+          
+          if @current_user.nil?
+            render json: { error: "Only existing users can comment" }, status: :not_found 
+          else
+            review = @current_user.reviews.create(comment: params[:comment], food_id: params[:food_id])
+            render json:{success: "Comment created successfully"},status: :created
+          end
+        end
    
      ### update existing review by id
  ### update existing review by id

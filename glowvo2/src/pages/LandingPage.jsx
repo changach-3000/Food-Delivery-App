@@ -29,7 +29,7 @@ function LandingPage() {
 
       <div class="col-12 col-md-6 col-lg-6">
         <p class="lead fw-lighter">Food Delivery and More</p>
-        <p id="home-text">
+        <p>
           We offer world class food delivery for the lowest prices and for the
           best service. So order with us today for the best food experience at
           the comfort of your home

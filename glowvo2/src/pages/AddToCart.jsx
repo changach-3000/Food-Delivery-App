@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { FoodContext } from '../context/FoodContext'
+import { Link } from 'react-router-dom';
 
 function AddToCart() {
   const { selectedFoods,removefromcheckout } = useContext(FoodContext);
@@ -9,7 +10,7 @@ function AddToCart() {
   }
 
   return (
-    <div className= 'container my-5' style={{backgroundColor:'#FFC244FF', margin:'3%'}}>
+    <div className= 'container my-5' style={{backgroundColor:'#FFC244FF', margin:'3%',height:'100vh'}}>
         <h2 className='text-center'>Selected Foods</h2>
       <div className=" row ">
       {selectedFoods && selectedFoods.map((food) => (
@@ -22,7 +23,7 @@ function AddToCart() {
            <div id="movie-details">
            <p style={{fontWeight:'lighter' ,fontSize:'13px'}}> {food.description}</p>
          <img className='mx-3' src="https://img.icons8.com/ios/20/null/minus.png" onClick={()=>removefromcheckout(food)}/>
-         <button className='btn btn-outline-success'>Proceed To Checkout</button>
+        <Link to={`/food/${food.id}`}><button className='btn btn-outline-success'>Proceed To Checkout</button></Link>
          
        </div>
        </div> 

@@ -3,10 +3,23 @@ class UsersController < ApplicationController
 ###get current logged  in user
 
 def current_user
-  user = User.find_by(id: session[:user_id])
+  user = User.includes(reviews: :food).find_by(id: session[:user_id])
 
   if user
-    render json: user
+    render json: {
+      id: user.id,
+      username: user.username,
+      email: user.email,
+      profile_picture: user.profile_picture,
+      is_admin: user.is_admin,
+      reviews: user.reviews.map do |review|
+        {
+          id: review.id,
+          comment: review.comment,
+          food_name: review.food.name
+        }
+      end
+    }
   else
     render json: { error: "Not logged in" }, status: :not_found
   end

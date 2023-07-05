@@ -11,6 +11,9 @@ import { AuthProvider } from "./context/AuthContext"
 import { FoodProvider } from "./context/FoodContext"
 import { ReviewProvider } from "./context/ReviewContext"
 import AddReview from "./pages/AddReview"
+import SingleFood from "./pages/SingleFood"
+import MyOrders from "./pages/MyOrders"
+import UpdateReviewForm from "./pages/UpdateReviewForm"
 
 
 function App() {  
@@ -27,8 +30,11 @@ function App() {
           <Route path="/login" element={<Login/>}/>
           <Route path="/profile" element={<Profile/>}/>
           <Route path="/checkout" element={<AddToCart/>}/>
+          <Route path="/food/:id" element={<SingleFood />} />
           <Route path="/addfood" element={<AddFood/>}/>
           <Route path="/addReview" element={<AddReview/>}/>
+          <Route path="/orders" element={<MyOrders/>}/>
+          <Route path="/updatereview" element={<UpdateReviewForm/>}/>
          </Route>
       </Routes>
       </ReviewProvider>
