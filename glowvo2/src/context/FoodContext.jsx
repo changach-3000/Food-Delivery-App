@@ -13,7 +13,7 @@ export function FoodProvider({children}){
 
   const Addtocheckout = (food) => {
     setSelectedFoods([...selectedFoods, food]);
-    const newcheckout = checkout.filter((b) => b.id !== food.id);
+    const newcheckout = checkout ? checkout.filter((b) => b.id !== food.id): [];
     setCheckout([...newcheckout, food]);
   };
 

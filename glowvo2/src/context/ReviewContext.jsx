@@ -72,7 +72,7 @@ const deleteReview = (id) =>{
   .then((response)=>{
         if(response.success)
         {
-          nav("/home")
+          nav("/profile")
           Swal.fire(
               'Success',
               response.success,
@@ -87,8 +87,6 @@ const deleteReview = (id) =>{
               'error'
             )
       }
-        
-
   })
 }
   
