@@ -1,16 +1,26 @@
 import { createContext, useEffect, useState} from "react"
+import { useNavigate } from "react-router"
 import  Swal from "sweetalert2"
 export const FoodContext= createContext()
 
 export function FoodProvider({children}){
+  const nav = useNavigate()
   const [foods , setFoods] = useState('')
   const [selectedFoods, setSelectedFoods] = useState([]);
   const [checkout, setCheckout] = useState()
+  const [orders,setOrders] = useState()
+  const [onChange,setonChange] = useState()
 
   const Addtocheckout = (food) => {
     setSelectedFoods([...selectedFoods, food]);
     const newcheckout = checkout.filter((b) => b.id !== food.id);
     setCheckout([...newcheckout, food]);
+  };
+
+  const AddtoOrders = (food) => {
+    setSelectedFoods([...selectedFoods, food]);
+    const neworders = orders.filter((b) => b.id !== food.id);
+    setOrders([...neworders, food]);
   };
   const removefromcheckout = (food) => {
     const newSelectedFoods = selectedFoods.filter((f) => f.id !== food.id);
@@ -101,6 +111,7 @@ const deleteFood = (id) =>{
       removefromcheckout,
       AddFood,
       deleteFood,
+      AddtoOrders,
     }
   return (
     <div>

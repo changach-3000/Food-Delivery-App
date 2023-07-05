@@ -1,15 +1,18 @@
 import React, { useContext, useState } from 'react'
-import { AuthContext } from '../context/AuthContext'
+
+import { ReviewContext } from '../context/ReviewContext'
 
 function AddReview() {
-    const {AddReviews} = useContext(AuthContext)
+    const {AddReviews} = useContext(ReviewContext)
     const [comment, setComment] = useState()
+    const [food_id, setFood_id]= useState()
     
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        AddReviews(comment)
+        AddReviews(comment,food_id)
         setComment("")
+        setFood_id("")
     
      }
   return (
@@ -19,6 +22,9 @@ function AddReview() {
                     <h3 className='text-center'>Leave Comment/ Review</h3>
                     <div className='mb-2'>
                         <textarea type='text' placeholder='Leave Comment' className='form-control' onChange={(e)=> setComment(e.target.value)} />
+                    </div>
+                    <div className='mb-2'>
+                        <input type='text' placeholder='food_id' className='form-control' onChange={(e)=> setFood_id(e.target.value)} />
                     </div>
                     <div className='d-grid'>
                         <button style={{ backgroundColor: '#FFC244FF', borderColor:'#FFC244FF'}} className='btn btn-primary'>Submit</button>

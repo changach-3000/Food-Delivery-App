@@ -63,8 +63,8 @@ end
         render json: { error: "Food not found" }, status: :not_found
       elsif !@current_user
         render json: { error: "You are not authorized to delete this food" }, status: :unauthorized
-      elsif @current_user.is_admin? && food.user_id != @current_user.id
-        render json: { error: "You are not authorized to delete another admin's food" }, status: :unauthorized
+      # elsif @current_user.is_admin? && food.user_id != @current_user.id
+      #   render json: { error: "You are not authorized to delete another admin's food" }, status: :unauthorized
       else
         food.reviews.destroy_all
         food.destroy
