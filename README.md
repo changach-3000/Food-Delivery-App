@@ -15,12 +15,9 @@ Glowvo is a food delivery app that allows users to order food from their favorit
 - Manage Orders: Users have the ability to view their past orders and delete any unwanted or canceled orders.
 - Leave and Update Reviews: Users can leave reviews for the restaurants they have ordered from and update their reviews if needed.
 
-### normal_user credentials
-email: black@gmail.com
-password: 1234567890
 
 ### Deployment
-The app has been deployed as a React_Rails application using Render and can be found on this link :..................
+The app has been deployed as a React_Rails application using Render and can be found on this link :https://glowvo.onrender.com/home
 
 ## Technologies Used
 - React
