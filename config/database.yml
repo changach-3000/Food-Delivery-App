@@ -10,7 +10,7 @@ default: &default
   timeout: 5000
 
 development:
-  url: postgresql://glowvodb_user:WvDc8tArcm8EK7eJbhZWLEnz1wmuGIpC@dpg-ciimpklph6erq6k1rqc0-a.oregon-postgres.render.com/glowvodb
+  url: postgresql://glowvodb_user:WvDc8tArcm8EK7eJbhZWLEnz1wmuGIpC@dpg-ciimpklph6erq6k1rqc0-a/glowvodb
   # <<: *default
   # database: db/development.sqlite3
 
